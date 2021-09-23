@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: demo-server
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/tcp-server:4
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/tcp-server:5
         ports:
         - containerPort: 80
       terminationGracePeriodSeconds: 30
