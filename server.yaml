@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: demo-20210924
+  name: jt-namespace
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-server
-  namespace: demo-20210924
+  namespace: jt-namespace
 spec:
   selector:
     matchLabels:
