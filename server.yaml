@@ -30,4 +30,12 @@ spec:
         ports:
         - containerPort: 80
       terminationGracePeriodSeconds: 30
+      env:
+        # Define the environment variable
+        - name: MYSQL_ENDPOINT # Notice that the case is different here
+                                     # from the key name in the ConfigMap.
+          valueFrom:
+            configMapKeyRef:
+              name: demo-config           # The ConfigMap this value comes from.
+              key: MYSQL_ENDPOINT # The key to fetch.
 ...
