@@ -12,8 +12,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 0%       # how many pods we can add at a time
-      maxUnavailable: 25%  # maxUnavailable define how many pods can be unavailable during the rolling update    
+      maxSurge: 0       # how many pods we can add at a time
+      maxUnavailable: 1  # maxUnavailable define how many pods can be unavailable during the rolling update    
   template:
     metadata:
       labels:
@@ -25,7 +25,7 @@ spec:
       serviceAccount: my-serviceaccount
       containers:
       - name: syha-ip
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:54
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:55
         ports:
         - containerPort: 80
         livenessProbe:
@@ -41,5 +41,5 @@ spec:
           preStop:
             exec:
               command:  ["/bin/bash", "-c", "/preStop.sh"]
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 300
 ...
