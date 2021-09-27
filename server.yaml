@@ -31,6 +31,8 @@ spec:
         image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:47
         ports:
         - containerPort: 80
+        nodeSelector:
+          app: kb-prd-ng-adm
         env:
           # Define the environment variable
           - name: MYSQL_ENDPOINT # Notice that the case is different here
