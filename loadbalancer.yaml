@@ -22,6 +22,7 @@ spec:
       name: tcp-80
       targetPort: 80
       protocol: TCP #supported values: [UDP, TCP, TCP_UDP, HTTP, HTTPS]
+  externalTrafficPolicy: Local
   type: LoadBalancer
   selector:
     app: syha-instance
