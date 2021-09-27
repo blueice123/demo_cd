@@ -25,7 +25,7 @@ spec:
       serviceAccount: my-serviceaccount
       containers:
       - name: syha-ip
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:51
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:54
         ports:
         - containerPort: 80
         livenessProbe:
@@ -40,6 +40,6 @@ spec:
         lifecycle:
           preStop:
             exec:
-              command:  ["/bin/sh", "-c", "/preStop.sh"]
+              command:  ["/bin/bash", "-c", "/preStop.sh"]
       terminationGracePeriodSeconds: 30
 ...
