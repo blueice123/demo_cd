@@ -19,8 +19,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 0       # how many pods we can add at a time
-      maxUnavailable: 25  # maxUnavailable define how many pods can be unavailable during the rolling update    
+      maxSurge: 0%       # how many pods we can add at a time
+      maxUnavailable: 25%  # maxUnavailable define how many pods can be unavailable during the rolling update    
   template:
     metadata:
       labels:
