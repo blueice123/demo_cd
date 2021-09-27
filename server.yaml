@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: demo-server
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:48
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:49
         ports:
         - containerPort: 80
         env:
