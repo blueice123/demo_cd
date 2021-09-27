@@ -41,5 +41,5 @@ spec:
           preStop:
             exec:
               command:  ["/bin/sh", "-c", "/preStop.sh"]
-      terminationGracePeriodSeconds: 300
+      terminationGracePeriodSeconds: 30
 ...
