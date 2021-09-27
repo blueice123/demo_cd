@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: jt-server-svc
+  name: demo-server-svc
   namespace: jt-namespace
   annotations:
     ## 공통 설정
     service.beta.kubernetes.io/aws-load-balancer-type: external
-    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: instance
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
     service.beta.kubernetes.io/aws-load-balancer-healthcheck-healthy-threshold: "2"
     service.beta.kubernetes.io/aws-load-balancer-healthcheck-unhealthy-threshold: "2"
     service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
@@ -24,5 +24,5 @@ spec:
       protocol: TCP #supported values: [UDP, TCP, TCP_UDP, HTTP, HTTPS]
   type: LoadBalancer
   selector:
-    app: jt-server
+    app: demo-server
 ...
