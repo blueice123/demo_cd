@@ -4,6 +4,9 @@ kind: Service
 metadata:
   name: demo-server-svc
   namespace: demo-20210924
+  lables:
+    ### https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.1/deploy/pod_readiness_gate/
+    elbv2.k8s.aws/pod-readiness-gate-inject: enabled
   annotations:
     ## 공통 설정
     service.beta.kubernetes.io/aws-load-balancer-type: external
