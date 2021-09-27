@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: demo-config
+  name: jt-config
   namespace: jt-namespace
 data:
   MYSQL_ENDPOINT: "mysql:3306"
