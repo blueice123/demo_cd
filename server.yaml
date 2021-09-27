@@ -41,7 +41,7 @@ spec:
               configMapKeyRef:
                 name: demo-config           # The ConfigMap this value comes from.
                 key: MYSQL_ENDPOINT # The key to fetch.
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 300
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
         - name: config
