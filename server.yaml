@@ -3,6 +3,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: jt-namespace
+  labels:
+    elbv2.k8s.aws/pod-readiness-gate-inject: enabled
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -17,8 +19,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 0       # how many pods we can add at a time
-      maxUnavailable: 25  # maxUnavailable define how many pods can be unavailable during the rolling update    
+      maxSurge: 0%       # how many pods we can add at a time
+      maxUnavailable: 25%  # maxUnavailable define how many pods can be unavailable during the rolling update    
   template:
     metadata:
       labels:
@@ -37,7 +39,7 @@ spec:
               configMapKeyRef:
                 name: demo-config           # The ConfigMap this value comes from.
                 key: MYSQL_ENDPOINT # The key to fetch.
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 300
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
         - name: config
