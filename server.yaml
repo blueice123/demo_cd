@@ -33,25 +33,5 @@ spec:
         image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:49
         ports:
         - containerPort: 80
-        env:
-          # Define the environment variable
-          - name: MYSQL_ENDPOINT # Notice that the case is different here
-                                      # from the key name in the ConfigMap.
-            valueFrom:
-              configMapKeyRef:
-                name: demo-config           # The ConfigMap this value comes from.
-                key: MYSQL_ENDPOINT # The key to fetch.
       terminationGracePeriodSeconds: 300
-      volumes:
-        # You set volumes at the Pod level, then mount them into containers inside that Pod
-        - name: config
-          configMap:
-            # Provide the name of the ConfigMap you want to mount.
-            name: demo-config
-            # An array of keys from the ConfigMap to create as files
-            items:
-            - key: "game.properties"
-              path: "game.properties"
-            - key: "user-interface.properties"
-              path: "user-interface.properties"
 ...
