@@ -9,12 +9,12 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-server
+  name: syha-ip
   namespace: demo-20210924
 spec:
   selector:
     matchLabels:
-      app: demo-server
+      app: syha-ip
   replicas: 4
   strategy:
     type: RollingUpdate
@@ -24,12 +24,12 @@ spec:
   template:
     metadata:
       labels:
-        app: demo-server
+        app: syha-ip
     spec:
       nodeSelector:
         app: kb-prd-ng-nlu
       containers:
-      - name: demo-server
+      - name: syha-ip
         image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:49
         ports:
         - containerPort: 80
