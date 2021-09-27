@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: syha-ip
-  replicas: 2
+  replicas: 4
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -21,6 +21,8 @@ spec:
     spec:
       nodeSelector:
         app: kb-prd-ng-adm
+      serviceAccountName: aws-load-balancer-controller
+      serviceAccount: aws-load-balancer-controller
       containers:
       - name: syha-ip
         image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:49
@@ -31,6 +33,13 @@ spec:
             path: /health_check.html
             port: 80
           initialDelaySeconds: 10
-          periodSeconds: 3
+          periodSeconds: 5
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 2
+        lifecycle:
+          preStop:
+            exec:
+              command:  ["/bin/sh", "-c", "/preStop.sh"]
       terminationGracePeriodSeconds: 300
 ...
