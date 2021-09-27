@@ -11,8 +11,6 @@ kind: Deployment
 metadata:
   name: demo-server
   namespace: demo-20210924
-  labels:
-    elbv2.k8s.aws/pod-readiness-gate-inject: enabled
 spec:
   selector:
     matchLabels:
