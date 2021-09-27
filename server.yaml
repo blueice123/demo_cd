@@ -26,6 +26,8 @@ spec:
       labels:
         app: demo-server
     spec:
+      nodeSelector:
+        app: kb-prd-ng-nlu
       containers:
       - name: demo-server
         image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:49
