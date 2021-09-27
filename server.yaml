@@ -25,7 +25,7 @@ spec:
       serviceAccount: aws-load-balancer-controller
       containers:
       - name: syha-ip
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:49
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:50
         ports:
         - containerPort: 80
         livenessProbe:
