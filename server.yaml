@@ -1,14 +1,15 @@
+
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: syha-ip
-  namespace: demo-20210924
+  name: syha-card
+  namespace: syha-card
 spec:
   selector:
     matchLabels:
-      app: syha-ip
-  replicas: 4
+      app: syha-card
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -17,15 +18,15 @@ spec:
   template:
     metadata:
       labels:
-        app: syha-ip
+        app: syha-card
     spec:
       nodeSelector:
         app: kb-prd-ng-adm
       serviceAccountName: my-serviceaccount
       serviceAccount: my-serviceaccount
       containers:
-      - name: syha-ip
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:55
+      - name: syha-card
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:card
         ports:
         - containerPort: 80
         livenessProbe:
