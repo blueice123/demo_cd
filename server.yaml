@@ -1,4 +1,10 @@
-
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: syha-card
+  labels:
+    elbv2.k8s.aws/pod-readiness-gate-inject: enabled
 ---
 apiVersion: apps/v1
 kind: Deployment
