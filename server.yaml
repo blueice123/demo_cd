@@ -60,3 +60,4 @@ spec:
             - key: "user-interface.properties"
               path: "user-interface.properties"
 ...
+
