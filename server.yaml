@@ -2,19 +2,19 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: syha-bank
+  name: syha-logging
   labels:
     elbv2.k8s.aws/pod-readiness-gate-inject: enabled
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: syha-bank
-  namespace: syha-bank
+  name: syha-logging
+  namespace: syha-logging
 spec:
   selector:
     matchLabels:
-      app: syha-bank
+      app: syha-logging
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -24,15 +24,15 @@ spec:
   template:
     metadata:
       labels:
-        app: syha-bank
+        app: syha-logging
     spec:
       nodeSelector:
         app: kb-prd-ng-adm
       serviceAccountName: my-serviceaccount
       serviceAccount: my-serviceaccount
       containers:
-      - name: syha-bank
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:bank
+      - name: syha-logging
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:logging_test
         ports:
         - containerPort: 80
         livenessProbe:
