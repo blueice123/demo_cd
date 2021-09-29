@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: syha-logging
+  name: kb-prd-nm-adm
   labels:
     elbv2.k8s.aws/pod-readiness-gate-inject: enabled
 ---
@@ -10,7 +10,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: syha-logging
-  namespace: syha-logging
+  namespace: kb-prd-nm-adm
 spec:
   selector:
     matchLabels:
