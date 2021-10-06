@@ -49,6 +49,12 @@ spec:
           # postStart:
           #   exec:
           #     command: ["/bin/sh", "-c", "sleep 190"]
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+            initialDelaySeconds: 10
+          
       #terminationGracePeriodSeconds: 300
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
