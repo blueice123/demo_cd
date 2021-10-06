@@ -20,18 +20,18 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 0%       # how many pods we can add at a time
+      maxSurge: 0       # how many pods we can add at a time
       maxUnavailable: 25%  # maxUnavailable define how many pods can be unavailable during the rolling update    
   template:
     metadata:
       labels:
         app: jt-server
     spec:
-      nodeSelector:
+      nodeSelector: 
         app: kb-prd-ng-adm
       containers:
       - name: jt-server
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:47
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:54
         ports:
         - containerPort: 80
         env:
