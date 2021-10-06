@@ -16,7 +16,7 @@ spec:
     matchLabels:
       app: jt-server
   replicas: 3
-  minReadySeconds: 190
+  minReadySeconds: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -42,10 +42,14 @@ spec:
               configMapKeyRef:
                 name: jt-config           # The ConfigMap this value comes from.
                 key: MYSQL_ENDPOINT # The key to fetch.
-        # lifecycle:
+        lifecycle:
         #   preStop:
         #     exec:
         #       command: ["  bin/sh", "-c", "sleep 40"]
+        postStart:
+          exec:
+            command: ["  bin/sh", "-c", "sleep 190"]
+
       terminationGracePeriodSeconds: 180
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
