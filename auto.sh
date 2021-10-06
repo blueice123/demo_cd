@@ -1,5 +1,5 @@
 #!/bin/bash
 while :
 do
-    curl k8s-jtnamesp-jtserver-31c4586ca4-af3c9518f12643f5.elb.ap-northeast-2.amazonaws.com
+    curl k8s-jtnamesp-jtserver-33c95fc292-23b3311c67260d80.elb.ap-northeast-2.amazonaws.com
 done
