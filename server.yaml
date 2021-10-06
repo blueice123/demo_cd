@@ -42,13 +42,13 @@ spec:
               configMapKeyRef:
                 name: jt-config           # The ConfigMap this value comes from.
                 key: MYSQL_ENDPOINT # The key to fetch.
-        # lifecycle:
-        #   preStop:
-        #     exec:
-        #       command: ["  bin/sh", "-c", "sleep 180"]
-          # postStart:
-          #   exec:
-          #     command: ["  bin/sh", "-c", "sleep 190"]
+        lifecycle:
+          preStop:
+            exec:
+              command: ["  bin/sh", "-c", "sleep 180"]
+          postStart:
+            exec:
+              command: ["  bin/sh", "-c", "sleep 190"]
 
       # terminationGracePeriodSeconds: 180
       volumes:
