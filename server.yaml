@@ -43,14 +43,14 @@ spec:
                 name: jt-config           # The ConfigMap this value comes from.
                 key: MYSQL_ENDPOINT # The key to fetch.
         lifecycle:
-          preStop:
-            exec:
-              command: ["/bin/sh", "-c", "sleep 180"]
+          # preStop:
+          #   exec:
+          #     command: ["/bin/sh", "-c", "sleep 180"]
           postStart:
             exec:
               command: ["/bin/sh", "-c", "sleep 190"]
           
-      #terminationGracePeriodSeconds: 180
+      terminationGracePeriodSeconds: 180
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
         - name: config
