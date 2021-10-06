@@ -16,7 +16,7 @@ spec:
     matchLabels:
       app: jt-server
   replicas: 4
-  minReadySeconds: 5
+  minReadySeconds: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -45,7 +45,7 @@ spec:
         # lifecycle:
         #   preStop:
         #     exec:
-        #       command: ["/bin/sh", "-c", "sleep 40"]
+        #       command: ["  bin/sh", "-c", "sleep 40"]
       terminationGracePeriodSeconds: 180
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
