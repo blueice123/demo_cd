@@ -16,7 +16,7 @@ spec:
     matchLabels:
       app: jt-server
   replicas: 4
-  minReadySeconds: 0
+  minReadySeconds: 190
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -31,7 +31,7 @@ spec:
         app: kb-prd-ng-adm
       containers:
       - name: jt-server
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:55
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:54
         ports:
         - containerPort: 80
         env:
@@ -46,11 +46,11 @@ spec:
           preStop:
             exec:
               command: ["/bin/sh", "-c", "sleep 180"]
-          postStart:
-            exec:
-              command: ["/bin/sh", "-c", "sleep 190"]
+          # postStart:
+          #   exec:
+          #     command: ["/bin/sh", "-c", "sleep 190"]
           
-      #terminationGracePeriodSeconds: 300
+      terminationGracePeriodSeconds: 180
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
         - name: config
