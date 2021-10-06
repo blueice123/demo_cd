@@ -15,7 +15,7 @@ spec:
   selector:
     matchLabels:
       app: jt-server
-  replicas: 3
+  replicas: 4
   minReadySeconds: 0
   strategy:
     type: RollingUpdate
