@@ -46,9 +46,9 @@ spec:
           preStop:
             exec:
               command: ["/bin/sh", "-c", "sleep 180"]
-          # postStart:
-          #   exec:
-          #     command: ["/bin/sh", "-c", "sleep 190"]
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "sleep 40"]
           
       #terminationGracePeriodSeconds: 190
       volumes:
