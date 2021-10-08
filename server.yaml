@@ -31,7 +31,7 @@ spec:
         app: kb-prd-ng-adm
       containers:
       - name: jt-server
-        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:55
+        image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:54
         ports:
         - containerPort: 80
         env:
@@ -48,7 +48,7 @@ spec:
               command: ["/bin/sh", "-c", "sleep 180"]
           postStart:
             exec:
-              command: ["/bin/sh", "-c", "sleep 40"]
+              command: ["/bin/sh", "-c", "sleep 190"]
           
       #terminationGracePeriodSeconds: 190
       volumes:
