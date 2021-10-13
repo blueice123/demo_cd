@@ -16,7 +16,7 @@ spec:
     matchLabels:
       app: jt-server
   replicas: 4
-  minReadySeconds: 190
+  minReadySeconds: 190  #testing
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -43,11 +43,11 @@ spec:
                 name: jt-config           # The ConfigMap this value comes from.
                 key: MYSQL_ENDPOINT # The key to fetch.
         lifecycle:
-          preStop:
+          preStop: #testing
             exec:
               command: ["/bin/sh", "-c", "sleep 180"]
           postStart:
-            exec:
+            exec:  #testing
               command: ["/bin/sh", "-c", "sleep 190"]
           
       #terminationGracePeriodSeconds: 190
