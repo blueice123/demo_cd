@@ -19,8 +19,8 @@ spec:
       labels:
         app: syha-card
     spec:
-      nodeSelector:
-        app: kb-prd-ng-adm
+#      nodeSelector:
+#        app: kb-prd-ng-adm
 #      serviceAccountName: my-serviceaccount
 #      serviceAccount: my-serviceaccount
       containers:
