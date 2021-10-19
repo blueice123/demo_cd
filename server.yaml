@@ -21,8 +21,8 @@ spec:
     spec:
       nodeSelector:
         app: kb-prd-ng-adm
-      serviceAccountName: my-serviceaccount
-      serviceAccount: my-serviceaccount
+#      serviceAccountName: my-serviceaccount
+#      serviceAccount: my-serviceaccount
       containers:
       - name: syha-card
         image: 239234376445.dkr.ecr.ap-northeast-2.amazonaws.com/demo:card
@@ -37,9 +37,9 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 2
-        lifecycle:
-          preStop:
-            exec:
-              command:  ["/bin/bash", "-c", "/preStop.sh"]
+#        lifecycle:
+#          preStop:
+#            exec:
+#              command:  ["/bin/bash", "-c", "/preStop.sh"]
       terminationGracePeriodSeconds: 300
 ...
